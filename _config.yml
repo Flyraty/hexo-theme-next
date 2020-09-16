@@ -29,9 +29,9 @@ custom_file_path:
   #postBodyEnd: source/_data/post-body-end.swig
   #footer: source/_data/footer.swig
   #bodyEnd: source/_data/body-end.swig
-  #variable: source/_data/variables.styl
+  variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+  style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -40,8 +40,8 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  small: /images/jiqiren-16x16.svg
+  medium: /images/jiqiren-32x32.svg
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -64,10 +64,10 @@ footer:
     color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright:
+  copyright: 
 
   # Powered by Hexo & NexT
-  powered: true
+  powered: false
 
   # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
@@ -97,10 +97,10 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 # Dark Mode
 darkmode: false
@@ -117,10 +117,12 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  archives: /archives/ || fa fa-archive
+  about: /about/ || fa fa-user
+  tags: /tags || fa fa-tags
+  categories: /categories || fa fa-th
+  archives: /archives || fa fa-archive
+  book: /book/ || fa fa-book
+  # book: /book || fa fa-books
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
@@ -163,11 +165,11 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: https://avatars2.githubusercontent.com/u/24888835?s=400&u=20f46b828b9ee5d5a93dfce95ec7c01d07cff6cf&v=4
   # If true, the avatar will be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -177,9 +179,10 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
+  GitHub: https://github.com/Flyraty || fab fa-github
+  Zhihu: https://www.zhihu.com/people/zhang-hai-liang-83-28 || fab fa-zhihu 
+  E-Mail: 139hailiangabc@gmail.com || fa fa-envelope
+  Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -196,13 +199,14 @@ social_icons:
 # Blog rolls
 links_settings:
   icon: fa fa-link
-  title: Links
+  title: 友情链接
   # Available values: block | inline
   layout: block
 
 links:
-  #Title: http://yoursite.com
-
+  The Internals of Spark SQL: https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/
+  # The Internals of Spark Structured Streaming: https://jaceklaskowski.gitbooks.io/spark-structured-streaming/content/
+  科技爱好者周刊: https://github.com/ruanyf/weekly
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
 toc:
@@ -253,6 +257,8 @@ symbols_count_time:
   separated_meta: true
   item_text_post: true
   item_text_total: false
+  awl: 4
+  wpm: 275
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -277,20 +283,20 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  #RSS: /atom.xml || fa fa-rss
+  RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: false
-  title: # Custom header, leave empty to use the default one
+  enable: true
+  title: 相关文章推荐# Custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
     #PPMixingRate: 0.0
     #isDate: false
     #isImage: false
-    #isExcerpt: false
+    isExcerpt: false
 
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
@@ -354,25 +360,25 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: normal
+  highlight_theme: night
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result.
-    show_result: false
+    show_result: true
     # Available values: default | flat | mac
-    style:
+    style: mac
 
 back2top:
-  enable: true
+  enable: false
   # Back to top in sidebar.
-  sidebar: false
+  sidebar: true
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
   color: "#37c6c0"
@@ -408,7 +414,7 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
@@ -421,31 +427,35 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
-    size:
+    family: Monda 
 
   # Font settings for site title (.site-title).
   title:
     external: true
     family:
-    size:
+    size: 
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
-    family:
-    size:
+    family: Roboto Slab
+    size: 
 
   # Font settings for posts (.post-body).
   posts:
     external: true
-    family:
+    family: 
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: PT Mono
 
+  # Logo 字体
+  logo:
+    external: true
+    family: Lobster Two
+    size: 24
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -463,7 +473,7 @@ exturl: false
 
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
-google_site_verification:
+google_site_verification: zkSnlx4XqngA-8SYFGRahJ85Xh3odO9uB6ILJk6UZHM
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
@@ -475,10 +485,10 @@ yandex_site_verification:
 
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
-baidu_site_verification:
+baidu_site_verification: code-XBmDG5fVMm
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 
 # ---------------------------------------------------------------
@@ -536,12 +546,12 @@ pangu: false
 # For more information: https://github.com/GoogleChromeLabs/quicklink
 # Front-matter (unsupport home archive).
 quicklink:
-  enable: false
+  enable: true
 
   # Home page and archive page can be controlled through home and archive options below.
   # This configuration item is independent of `enable`.
-  home: false
-  archive: false
+  home: true
+  archive: true
 
   # Default (true) will initialize quicklink after the load event fires.
   delay: true
@@ -581,8 +591,8 @@ comments:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: flyraty
   count: true
   #post_meta_order: 0
 
@@ -619,7 +629,7 @@ valine:
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
+  language:  # Language, available values: en, zh-cn
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
@@ -676,7 +686,7 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: 6bc2c4534334d1bfc728a50579caeccf
 
 # Growingio Analytics
 growingio_analytics: # <project_id>
@@ -711,7 +721,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
@@ -739,7 +749,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
@@ -824,7 +834,7 @@ mermaid:
 # For more information: http://velocityjs.org
 motion:
   enable: true
-  async: false
+  async: true
   transition:
     # Transition variants:
     # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
@@ -844,7 +854,7 @@ motion:
 # Dependencies: https://github.com/theme-next/theme-next-pace
 # For more information: https://github.com/HubSpot/pace
 pace:
-  enable: false
+  enable: true
   # Themes list:
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
@@ -860,7 +870,7 @@ three:
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
-# For more information: https://github.com/zproo/canvas-ribbon
+# For more info/rmation: https://github.com/zproo/canvas-ribbon
 canvas_ribbon:
   enable: false
   size: 300 # The width of the ribbon
@@ -931,7 +941,7 @@ vendors:
 
   # Quicklink
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
-  quicklink:
+  quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
 
   # DisqusJS
   # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
@@ -970,28 +980,98 @@ vendors:
   velocity_ui:
 
   # Internal version: 1.0.2
-  # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
-  # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-  pace:
-  pace_css:
+  pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
+  # pace:
+  # pace_css:
 
+  canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
+  canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
   # Internal version: 1.0.0
   # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
   # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
-  three:
-  three_waves:
-  canvas_lines:
-  canvas_sphere:
-
+  three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
+  three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
+  canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
+  canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
   # Internal version: 1.0.0
   # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
-  canvas_ribbon:
+  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
 
 # Assets
 css: css
 js: js
 images: images
+
+# 不显示全文
+auto_excerpt:
+  enable: true
+  length: 150
+
+# Canvas-nest
+# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
+canvas_nest:
+  enable: false
+  onmobile: true # display on mobile or not
+  color: "0,0,255" # RGB values, use ',' to separate
+  opacity: 0.5 # the opacity of line: 0~1
+  zIndex: -1 # z-index property of the background
+  count: 99 # the number of lines
+
+# feed
+# Dependencies: https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+
+moon_menu:
+  back2top:
+    enable: true
+    icon: fa fa-chevron-up
+    func: back2top
+    order: -1
+  back2bottom:
+    enable: true
+    icon: fa fa-chevron-down
+    func: back2bottom
+    order: -2
+
+cursor_effect: fireworks
+
+# 博文压缩
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'
+    - '**/fireworks.js'
+
+recent_posts_title: 近期文章
+recent_posts_layout: block
+recent_posts: true

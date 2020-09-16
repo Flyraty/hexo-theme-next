@@ -100,3 +100,33 @@ if (hexo-config('sidebar.position') == 'right') {
     width: auto;
   }
 }
+header{ width: 80% ; }
+header.post-header {
+  width: auto ;
+}
+.container .main-inner { width: 80%; }
+.content-wrap { width: calc(100% - 260px); }
+.header {
+  +tablet() {
+    width: auto !important;
+  }
+  +mobile() {
+    width: auto ;
+  }
+}
+.container .main-inner {
+  +tablet() {
+    width: auto !important;
+  }
+  +mobile() {
+    width: auto ;
+  }
+}
+.content-wrap {
+  +tablet() {
+    width: 100% !important;
+  }
+  +mobile() {
+    width: 100% ;
+  }
+}
